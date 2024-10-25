@@ -1,4 +1,4 @@
-// users.service.ts
+// user.service.ts
 
 import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
@@ -7,7 +7,7 @@ import { User, UserDocument } from './user.schema';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
-export class UsersService {
+export class UserService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
   async createUser(createUserDto: any): Promise<User> {

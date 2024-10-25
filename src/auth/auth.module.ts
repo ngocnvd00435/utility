@@ -6,11 +6,11 @@ import { PassportModule } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 
 import { JwtStrategy } from './jwt.strategy';
-import { UsersModule } from '../model/user/users.module';
+import { UserModule } from '../model/user/user.module';
 
 @Module({
   imports: [
-    forwardRef(() => UsersModule),
+    forwardRef(() => UserModule),
     PassportModule,
     JwtModule.register({
       secret: 'YOUR_SECRET_KEY', // Thay bằng khóa bí mật của bạn, nên lưu vào biến môi trường

@@ -7,15 +7,14 @@ import {
   UnauthorizedException,
   UseGuards,
 } from '@nestjs/common';
-import { UsersService } from './users.service';
+import { UserService } from './user.service';
 import { AuthService } from '../../auth/auth.service';
 import { AuthGuard } from '../../auth/auth.guard';
-import * as process from 'node:process';
 
 @Controller('user')
 export class UserController {
   constructor(
-    private readonly userService: UsersService,
+    private readonly userService: UserService,
     private readonly authService: AuthService,
   ) {}
 
